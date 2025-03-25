@@ -6,9 +6,9 @@ export type Props = {
   text: string;
 };
 
-export default function Button(children: Props) {
+export default function GerarImg(children: Props) {
   return (
-    <button
+    <p
       onClick={invalidateQuery}
       className="flex gap-1 bg-neutral-100 hover:bg-neutral-300 hover:cursor-pointer duration-200 text-black p-3 rounded-sm"
     >
@@ -16,7 +16,7 @@ export default function Button(children: Props) {
         icon={children.icon}
         className=" text-amber-900 text-xl font-bold self-center"
       />
-      <p className="text-sm">{children.text}</p>
-    </button>
+      {children.text}
+    </p>
   );
 }

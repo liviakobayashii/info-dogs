@@ -17,13 +17,13 @@ type Props = {
 export default function DialogItem({ trigger, title, description }: Props) {
   return (
     <Dialog>
-      <DialogTrigger className="flex items-center gap-2">
+      <DialogTrigger asChild className="flex items-center gap-2">
         {trigger}
       </DialogTrigger>
       <DialogContent>
         <DialogHeader className="flex justify-center items-center">
           <DialogTitle className="py-4 text-gray-950">{title}</DialogTitle>
-          <DialogDescription asChild>{description}</DialogDescription>
+          <DialogDescription>{description}</DialogDescription>
         </DialogHeader>
       </DialogContent>
     </Dialog>

@@ -1,6 +1,6 @@
 "use client";
 
-import Button from "@/components/button";
+import Button from "@/components/gerar-img";
 import Header from "@/components/header";
 import { RandomDogImage } from "@/types/dogImage";
 import { invalidateQuery, req } from "@/utils/queries";

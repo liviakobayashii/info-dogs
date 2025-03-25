@@ -1,7 +1,12 @@
 import { Icon } from "@iconify/react";
 import { Rubik_Bubbles } from "next/font/google";
 import Link from "next/link";
-import Button from "./button";
+import Button from "./gerar-img";
+import DialogItem from "./dialog";
+import { RandomDogImage } from "@/types/dogImage";
+import { req } from "@/utils/queries";
+import { useQuery } from "@tanstack/react-query";
+import RandomImg from "./random-img";
 
 const rubikBubbles = Rubik_Bubbles({
   subsets: ["latin"],
@@ -16,17 +21,7 @@ export default function Header() {
           Info Dogs
         </h1>
       </Link>
-      <Link href={"/random"}>
-        <Button icon="stash:image-switch" text="Gerar imagem aleatória" />
-
-        {/* <button className="flex gap-1 bg-neutral-100 hover:bg-neutral-300 hover:cursor-pointer duration-200 text-black p-3 rounded-sm">
-          <Icon
-            icon="stash:image-switch"
-            className=" text-amber-900 text-xl font-bold self-center"
-          />
-          <p className="text-sm">Gerar imagem aleatória</p>
-        </button> */}
-      </Link>
+      <RandomImg />
     </header>
   );
 }
