@@ -8,6 +8,7 @@ import {
 import { DogImage } from "@/types/dogImage";
 import { req } from "@/utils/queries";
 import { useQuery } from "@tanstack/react-query";
+import Loader from "./loader";
 
 type CarrosselProps = {
   breed: string;
@@ -19,12 +20,12 @@ export default function Carrossel({ breed }: CarrosselProps) {
     return result.data;
   };
 
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, isFetching } = useQuery({
     queryKey: ["breed", breed],
     queryFn: getBreed,
   });
 
-  if (isLoading) return "Carregando imagens";
+  if (isLoading || isFetching) return <Loader />;
 
   return (
     <Carousel
@@ -45,8 +46,8 @@ export default function Carrossel({ breed }: CarrosselProps) {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className=" text-black hover:cursor-pointer" />
-      <CarouselNext className=" text-black hover:cursor-pointer" />
+      <CarouselPrevious className=" text-amber-900 hover:bg-amber-900 hover:cursor-pointer duration-200" />
+      <CarouselNext className=" text-amber-900 hover:bg-amber-900 hover:cursor-pointer duration-200" />
     </Carousel>
   );
 }
