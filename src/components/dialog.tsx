@@ -23,7 +23,7 @@ export default function DialogItem({ trigger, title, description }: Props) {
       <DialogContent>
         <DialogHeader className="flex justify-center items-center">
           <DialogTitle className="py-4 text-gray-950">{title}</DialogTitle>
-          <DialogDescription>{description}</DialogDescription>
+          <DialogDescription asChild>{description}</DialogDescription>
         </DialogHeader>
       </DialogContent>
     </Dialog>
