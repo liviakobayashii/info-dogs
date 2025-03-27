@@ -6,6 +6,7 @@ import Header from "@/components/header";
 import Carrossel from "@/components/carrossel";
 import DialogItem from "@/components/dialog";
 import { SkeletonCard } from "@/components/skeleton";
+import Loader from "@/components/loader";
 
 const capitalizeFirstLetter = (string: string) => {
   return string.charAt(0).toUpperCase() + string.substring(1);
@@ -21,13 +22,10 @@ export default function Page() {
         <h2 className="text-xl text-gray-950 font-bold py-5">
           Conheça todas as raças de cachorros em um só lugar!
         </h2>
-        {dogs.isFetching || dogs.isLoading ? (
-          <div>
-            <SkeletonCard />
-          </div>
-        ) : (
+        {dogs.isLoading && <SkeletonCard />}
+        {!dogs.isLoading && (
           <div className="flex flex-col bg-white p-6 rounded-sm">
-            <ul className=" grid grid-cols-4 gap-3">
+            <ul className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
               {dogs.data &&
                 Object.keys(dogs.data.message).map((item, i) => (
                   <DialogItem

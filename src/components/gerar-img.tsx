@@ -22,7 +22,7 @@ export default function GerarImg({ icon, text, ...props }: Props) {
     >
       <Icon
         icon={icon}
-        className="text-amber-900 text-xl font-bold self-center"
+        className="hidden sm:block text-amber-900 text-xl font-bold self-center"
       />
       {text}
     </button>

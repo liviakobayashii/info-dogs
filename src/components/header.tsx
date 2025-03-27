@@ -1,11 +1,5 @@
-import { Icon } from "@iconify/react";
 import { Rubik_Bubbles } from "next/font/google";
 import Link from "next/link";
-import Button from "./gerar-img";
-import DialogItem from "./dialog";
-import { RandomDogImage } from "@/types/dogImage";
-import { req } from "@/utils/queries";
-import { useQuery } from "@tanstack/react-query";
 import RandomImg from "./random-img";
 
 const rubikBubbles = Rubik_Bubbles({

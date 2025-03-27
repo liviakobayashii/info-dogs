@@ -28,26 +28,50 @@ export default function Carrossel({ breed }: CarrosselProps) {
   if (isLoading || isFetching) return <Loader />;
 
   return (
-    <Carousel
-      opts={{
-        align: "center",
-        loop: true,
-      }}
-      className="relative w-full max-w-[500px] mx-auto"
-    >
-      <CarouselContent>
-        {data?.message.map((item, i) => (
-          <CarouselItem key={i} className="flex justify-center">
-            <img
-              src={item}
-              alt={`Dog ${i}`}
-              className="rounded-xl object-cover max-h-[300px] max-w-200"
-            />
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious className=" text-amber-900 hover:bg-amber-900 hover:cursor-pointer duration-200" />
-      <CarouselNext className=" text-amber-900 hover:bg-amber-900 hover:cursor-pointer duration-200" />
-    </Carousel>
+    <>
+      <Carousel
+        opts={{
+          align: "center",
+          loop: true,
+        }}
+        className="hidden md:block relative w-full max-w-[500px] mx-auto "
+      >
+        <CarouselContent>
+          {data?.message.map((item, i) => (
+            <CarouselItem key={i} className="flex justify-center">
+              <img
+                src={item}
+                alt={`Dog ${i}`}
+                className="rounded-sm object-cover max-h-[300px] max-w-200"
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className=" text-amber-900 hover:bg-amber-900 hover:cursor-pointer duration-200" />
+        <CarouselNext className=" text-amber-900 hover:bg-amber-900 hover:cursor-pointer duration-200" />
+      </Carousel>
+      <Carousel
+        orientation="vertical"
+        opts={{
+          align: "center",
+          loop: true,
+        }}
+        className="my-10 md:hidden relative w-full max-w-xs items-center justify-center"
+      >
+        <CarouselContent className="-mt-1 h-[200px]">
+          {data?.message.map((item, i) => (
+            <CarouselItem key={i} className="pt-1 md:basis-1/3 ">
+              <img
+                src={item}
+                alt={`Dog ${i}`}
+                className="flex items-center justify-center"
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className=" text-amber-900 hover:bg-amber-900 hover:cursor-pointer duration-200" />
+        <CarouselNext className=" text-amber-900 hover:bg-amber-900 hover:cursor-pointer duration-200" />
+      </Carousel>
+    </>
   );
 }

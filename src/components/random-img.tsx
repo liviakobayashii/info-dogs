@@ -2,9 +2,7 @@ import { req } from "@/utils/queries";
 import DialogItem from "./dialog";
 import { RandomDogImage } from "@/types/dogImage";
 import { useQuery } from "@tanstack/react-query";
-import Button from "./gerar-img";
 import GerarImg from "./gerar-img";
-import { Icon } from "@iconify/react/dist/iconify.js";
 import Loader from "./loader";
 
 export default function RandomImg() {
@@ -34,7 +32,7 @@ export default function RandomImg() {
         // <Button icon="stash:image-switch" text="Gerar imagem aleatória" />
       }
       description={
-        isFetching || isLoading ? (
+        isLoading || isFetching ? (
           <Loader />
         ) : (
           <div className="flex flex-col gap-2 justify-center">

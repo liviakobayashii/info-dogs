@@ -1,3 +1,4 @@
+"use client";
 import { Breeds } from "@/types/breed";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
