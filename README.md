@@ -19,4 +19,5 @@ Deploy do projeto: https://info-dogs.vercel.app
 * TailwindCSS
 * ShadCN UI
 * TanStack Query
+* Iconify
 
