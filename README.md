@@ -8,7 +8,7 @@ Deploy do projeto: https://info-dogs.vercel.app
 * Exibição de todas as imagens de uma raça ao clicar no nome.
 * Geração de imagem aleatória de qualquer cachorro.
 * Modal com visualização de imagem.
-*Interface responsiva e moderna.a a qualquer momento.
+* Interface responsiva e moderna.a a qualquer momento.
 
 ## Tecnologias utilizadas
 * NextJS
